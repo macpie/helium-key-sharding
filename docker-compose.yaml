@@ -1,0 +1,19 @@
+version: '3'
+services:
+  key_sharding:
+    build: .
+    image: helium/key-sharding:latest
+    container_name: key-sharding
+    environment:
+      NAME: cold_storage_4
+      TOTAL: 6
+      THRESHOLD: 3
+      MOVE: /tmp/V-1;/tmp/V-2;/tmp/V-3;/tmp/V-4;/tmp/V-5;/tmp/V-6
+    command: /opt/key-sharding/run.sh
+    volumes:
+        - /Volumes/V-1:/tmp/V-1
+        - /Volumes/V-2:/tmp/V-2
+        - /Volumes/V-3:/tmp/V-3
+        - /Volumes/V-4:/tmp/V-4
+        - /Volumes/V-5:/tmp/V-5
+        - /Volumes/V-6:/tmp/V-6

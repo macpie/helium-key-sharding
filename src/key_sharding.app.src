@@ -1,0 +1,21 @@
+{application, key_sharding,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { key_sharding_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    crypto,
+    multiaddr,
+    ecc_compact,
+    enacl,
+    libp2p_crypto
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
